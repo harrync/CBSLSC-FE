@@ -1,0 +1,44 @@
+{
+  "format": "custom",
+  "id": "footer",
+  "label": "Footer",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "social_links": {
+        "type": "Group",
+        "config": {
+          "label": "Social links",
+          "repeat": true,
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "type": {
+              "type": "Select",
+              "config": {
+                "label": "Type",
+                "placeholder": "",
+                "options": ["Email", "Facebook", "Twitter", "Instagram"],
+                "default_value": "Email"
+              }
+            }
+          }
+        }
+      },
+      "copyright_text": {
+        "type": "Text",
+        "config": {
+          "label": "Copyright text",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

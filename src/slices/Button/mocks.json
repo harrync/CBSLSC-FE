@@ -1,0 +1,30 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com"
+				}
+			},
+			"label": {
+				"__TYPE__": "FieldContent",
+				"value": "completely",
+				"type": "Text"
+			},
+			"primary": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"size": {
+				"__TYPE__": "FieldContent",
+				"value": "large",
+				"type": "Select"
+			}
+		},
+		"items": []
+	}
+]
