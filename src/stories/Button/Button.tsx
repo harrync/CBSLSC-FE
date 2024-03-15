@@ -9,7 +9,6 @@ interface ButtonProps {
   primary?: boolean;
   size?: "small" | "medium" | "large";
   label: string | KeyTextField;
-  target?: string;
   link: LinkField;
 }
 
@@ -21,7 +20,6 @@ export const Button = ({
   size = "medium",
   label,
   link,
-  target,
   ...props
 }: ButtonProps) => {
   const mode = primary
@@ -30,7 +28,6 @@ export const Button = ({
   return (
     <PrismicNextLink
       field={link}
-      target={target}
       className={["storybook-button", `storybook-button--${size}`, mode].join(
         " "
       )}

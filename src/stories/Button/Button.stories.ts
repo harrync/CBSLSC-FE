@@ -8,7 +8,7 @@ const meta = {
     layout: "centered",
   },
   tags: ["autodocs"],
-  args: { href: "#" },
+  args: { label: "Button", link: undefined },
 } satisfies Meta<typeof Button>;
 
 export default meta;
