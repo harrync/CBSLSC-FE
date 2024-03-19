@@ -5,7 +5,10 @@ const meta = {
   title: "Layout",
   component: CbLayout,
   parameters: {
-    layout: "centered",
+    layout: "fullscreen",
+  },
+  args: {
+    children: "Hello, World!",
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof CbLayout>;
@@ -14,5 +17,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    classes: "col-7",
+  },
 };
