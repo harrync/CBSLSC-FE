@@ -1,0 +1,13 @@
+@use "@/styles/config/breakpoints" as *;
+@import "include-media/dist/_include-media";
+
+/**
+ * Breakpoints
+ */
+$breakpoints: (
+  xs: $breakpoint-xs,
+  sm: $breakpoint-sm,
+  md: $breakpoint-md,
+  lg: $breakpoint-lg,
+  xlg: $breakpoint-xlg,
+);

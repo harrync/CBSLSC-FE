@@ -1,0 +1,9 @@
+@use "@/styles/helpers" as *;
+
+body {
+  background-color: var(--red);
+
+  @include media("<lg") {
+    background-color: var(--yellow);
+  }
+}

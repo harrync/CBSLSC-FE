@@ -22,15 +22,11 @@ export const Button = ({
   link,
   ...props
 }: ButtonProps) => {
-  const mode = primary
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
+  const mode = primary ? "a-button--primary" : "a-button--secondary";
   return (
     <PrismicNextLink
       field={link}
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
-        " "
-      )}
+      className={["a-button", `a-button--${size}`, mode].join(" ")}
       {...props}
     >
       {label}

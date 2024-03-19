@@ -8,6 +8,9 @@ import { components } from "@/slices";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
+import "@/styles/reset.scss";
+import "@/styles/global.scss";
+
 // This component renders your homepage.
 //
 // Use Next's generateMetadata function to render page metadata.
