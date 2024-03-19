@@ -1,21 +1,21 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { CbImage } from ".";
+import type { Meta, StoryObj } from '@storybook/react';
+import { CbImage } from '.';
 
 const meta = {
-  title: "Image",
+  title: 'Image',
   component: CbImage,
   parameters: {
-    layout: "fullscreen",
+    layout: 'fullscreen',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: {
     field: {
       dimensions: { width: 3000, height: 1500 },
-      alt: "testing",
+      alt: 'testing',
       copyright: null,
-      url: "https://images.prismic.io/cbslsc/ZfoB2w4qyfNhFy_l_3000x1500.jpg?auto=format,compress",
-      id: "ZfoB2w4qyfNhFy_l",
-      edit: { x: 0, y: 0, zoom: 1, background: "transparent" },
+      url: 'https://images.prismic.io/cbslsc/ZfoB2w4qyfNhFy_l_3000x1500.jpg?auto=format,compress',
+      id: 'ZfoB2w4qyfNhFy_l',
+      edit: { x: 0, y: 0, zoom: 1, background: 'transparent' },
     },
   },
 } satisfies Meta<typeof CbImage>;
@@ -25,11 +25,11 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    variant: "default",
+    variant: 'default',
   },
 };
 export const Inline: Story = {
   args: {
-    variant: "inline",
+    variant: 'inline',
   },
 };

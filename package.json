@@ -50,5 +50,13 @@
     "slice-machine-ui": "^1.25.0",
     "storybook": "^8.0.1",
     "typescript": "^5.4.2"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "bracketSameLine": false,
+    "arrowParens": "always"
   }
 }

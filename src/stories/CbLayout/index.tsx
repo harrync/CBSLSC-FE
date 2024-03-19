@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import React from "react";
-import "./cb-layout.scss";
+import React from 'react';
+import './cb-layout.scss';
 
 interface Props {
   container?: boolean;

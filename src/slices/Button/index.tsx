@@ -1,7 +1,7 @@
-import { Content } from "@prismicio/client";
-import { PrismicNextLink } from "@prismicio/next";
-import { SliceComponentProps } from "@prismicio/react";
-import { CbButton } from "@/stories/CbButton";
+import { Content } from '@prismicio/client';
+import { PrismicNextLink } from '@prismicio/next';
+import { SliceComponentProps } from '@prismicio/react';
+import { CbButton } from '@/stories/CbButton';
 /**
  * Props for `Button`.
  */

@@ -1,4 +1,4 @@
-@use "@/styles/helpers" as *;
+@use '@/styles/helpers' as *;
 
 .a-image {
   padding: 0;
@@ -18,7 +18,7 @@
     --imageMargin: var(--space-3);
     margin: var(--imageMargin) 0;
 
-    @include media(">=sm") {
+    @include media('>=sm') {
       --imageMargin: var(--space-5);
     }
 

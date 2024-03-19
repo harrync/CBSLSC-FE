@@ -1,13 +1,13 @@
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
-import { SliceZone } from "@prismicio/react";
-import * as prismic from "@prismicio/client";
+import { SliceZone } from '@prismicio/react';
+import * as prismic from '@prismicio/client';
 
-import { createClient } from "@/prismicio";
-import { components } from "@/slices";
-import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
+import { createClient } from '@/prismicio';
+import { components } from '@/slices';
+import { Navigation } from '@/components/Navigation';
+import { Footer } from '@/components/Footer';
 
 type Params = { uid: string };
 
@@ -22,7 +22,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const client = createClient();
   const page = await client
-    .getByUID("page", params.uid)
+    .getByUID('page', params.uid)
     .catch(() => notFound());
 
   return {
@@ -32,7 +32,7 @@ export async function generateMetadata({
       title: page.data.meta_title || undefined,
       images: [
         {
-          url: page.data.meta_image.url || "",
+          url: page.data.meta_image.url || '',
         },
       ],
     },
@@ -42,7 +42,7 @@ export async function generateMetadata({
 export default async function Page({ params }: { params: Params }) {
   const client = createClient();
   const page = await client
-    .getByUID("page", params.uid)
+    .getByUID('page', params.uid)
     .catch(() => notFound());
 
   return (
@@ -60,8 +60,8 @@ export async function generateStaticParams() {
   /**
    * Query all Documents from the API, except the homepage.
    */
-  const pages = await client.getAllByType("page", {
-    predicates: [prismic.filter.not("my.page.uid", "home")],
+  const pages = await client.getAllByType('page', {
+    predicates: [prismic.filter.not('my.page.uid', 'home')],
   });
 
   /**

@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import React from "react";
-import "./cb-image.scss";
-import { ImageField } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
-import { CbLayout } from "@/stories/CbLayout";
+import React from 'react';
+import './cb-image.scss';
+import { ImageField } from '@prismicio/client';
+import { PrismicNextImage } from '@prismicio/next';
+import { CbLayout } from '@/stories/CbLayout';
 
 interface Props {
-  variant: "default" | "inline";
+  variant: 'default' | 'inline';
   field: ImageField;
 }
 
@@ -15,7 +15,7 @@ interface Props {
  * Primary UI component for user interaction
  */
 export const CbImage = ({ variant, field, ...props }: Props) => {
-  if (variant === "inline") {
+  if (variant === 'inline') {
     return (
       <CbLayout container classes="col-9">
         <figure className="a-image a-image--inline">

@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
-import "./cb-button.scss";
-import { KeyTextField, LinkField } from "@prismicio/client";
-import { PrismicNextLink } from "@prismicio/next";
+import React from 'react';
+import './cb-button.scss';
+import { KeyTextField, LinkField } from '@prismicio/client';
+import { PrismicNextLink } from '@prismicio/next';
 
 interface ButtonProps {
   primary?: boolean;
@@ -20,11 +20,11 @@ export const CbButton = ({
   link,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? "a-button--primary" : "a-button--secondary";
+  const mode = primary ? 'a-button--primary' : 'a-button--secondary';
   return (
     <PrismicNextLink
       field={link}
-      className={["a-button", mode].join(" ")}
+      className={['a-button', mode].join(' ')}
       {...props}
     >
       {label}

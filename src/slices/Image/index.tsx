@@ -1,6 +1,6 @@
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
-import { CbImage } from "@/stories/CbImage";
+import { Content } from '@prismicio/client';
+import { SliceComponentProps } from '@prismicio/react';
+import { CbImage } from '@/stories/CbImage';
 
 /**
  * Props for `Image`.

@@ -1,18 +1,18 @@
-import type { StorybookConfig } from "@storybook/nextjs";
-import { resolve } from "path";
+import type { StorybookConfig } from '@storybook/nextjs';
+import { resolve } from 'path';
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
-    "@storybook/addon-onboarding",
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@chromatic-com/storybook",
-    "@storybook/addon-interactions",
-    "@storybook/addon-styling-webpack",
+    '@storybook/addon-onboarding',
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@chromatic-com/storybook',
+    '@storybook/addon-interactions',
+    '@storybook/addon-styling-webpack',
   ],
   framework: {
-    name: "@storybook/nextjs",
+    name: '@storybook/nextjs',
     options: {
       builder: {
         useSWC: true, // Enables SWC support
@@ -20,27 +20,27 @@ const config: StorybookConfig = {
     },
   },
   docs: {
-    autodocs: "tag",
+    autodocs: 'tag',
   },
   webpackFinal: async (config, { configType }) => {
     (config.resolve = {
       ...config.resolve,
       alias: {
-        "@": [resolve(__dirname, "../src/")],
+        '@': [resolve(__dirname, '../src/')],
       },
     }),
       config.module?.rules?.push({
         test: /\.scss$/,
         use: [
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               url: false,
             },
           },
-          "sass-loader",
+          'sass-loader',
         ],
-        include: resolve(__dirname, "/src/styles"),
+        include: resolve(__dirname, '/src/styles'),
       });
     // Return the altered config
     return config;

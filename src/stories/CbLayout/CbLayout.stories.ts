@@ -1,16 +1,16 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { CbLayout } from ".";
+import type { Meta, StoryObj } from '@storybook/react';
+import { CbLayout } from '.';
 
 const meta = {
-  title: "Layout",
+  title: 'Layout',
   component: CbLayout,
   parameters: {
-    layout: "fullscreen",
+    layout: 'fullscreen',
   },
   args: {
-    children: "Hello, World!",
+    children: 'Hello, World!',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } satisfies Meta<typeof CbLayout>;
 
 export default meta;
@@ -18,6 +18,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    classes: "col-7",
+    classes: 'col-7',
   },
 };
