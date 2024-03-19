@@ -1,0 +1,6 @@
+@use "@/styles/helpers" as *;
+@use "@/styles/config/breakpoints" as *;
+@use "~reflex-grid/scss/reflex.scss" with (
+  $reflex-grid-spacing: var(--space-2),
+  $reflex-lg: $breakpoint-lg
+);

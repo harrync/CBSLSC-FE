@@ -1,0 +1,26 @@
+@use "@/styles/helpers" as *;
+
+.a-button {
+  font-weight: 900;
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1;
+  font-size: 1rem;
+  padding: 0.25rem 1rem;
+
+  &--primary {
+    color: white;
+    background-color: var(--red);
+  }
+
+  &--secondary {
+    color: var(--black);
+    background-color: var(--yellow);
+  }
+}

@@ -1,7 +1,7 @@
 import { Content } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
-import { Button as ButtonComp } from "@/stories/Button/Button";
+import { CbButton } from "@/stories/CbButton";
 /**
  * Props for `Button`.
  */
@@ -17,9 +17,8 @@ const Button = ({ slice }: ButtonProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <PrismicNextLink field={slice.primary.link}></PrismicNextLink>
-      <ButtonComp
+      <CbButton
         primary={slice.primary.primary ? true : false}
-        size={slice.primary.size}
         label={slice.primary.label}
         link={slice.primary.link}
       />

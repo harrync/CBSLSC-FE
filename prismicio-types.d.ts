@@ -133,7 +133,7 @@ export type MainMenuDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = ButtonSlice | RichTextSlice;
+type PageDocumentDataSlicesSlice = ImageSlice | ButtonSlice | RichTextSlice;
 
 /**
  * Content for Page documents
@@ -241,17 +241,6 @@ export interface ButtonSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   primary: prismic.BooleanField;
-
-  /**
-   * Size field in *Button → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **Default Value**: small
-   * - **API ID Path**: button.primary.size
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  size: prismic.SelectField<"small" | "medium" | "large", "filled">;
 }
 
 /**
@@ -280,6 +269,76 @@ type ButtonSliceVariation = ButtonSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type ButtonSlice = prismic.SharedSlice<"button", ButtonSliceVariation>;
+
+/**
+ * Primary content in *Image → Primary*
+ */
+export interface ImageSliceDefaultPrimary {
+  /**
+   * Image field in *Image → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Image Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ImageSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Image → Primary*
+ */
+export interface ImageSliceInlinePrimary {
+  /**
+   * Image field in *Image → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Inline variation for Image Slice
+ *
+ * - **API ID**: `inline`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageSliceInline = prismic.SharedSliceVariation<
+  "inline",
+  Simplify<ImageSliceInlinePrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Image*
+ */
+type ImageSliceVariation = ImageSliceDefault | ImageSliceInline;
+
+/**
+ * Image Shared Slice
+ *
+ * - **API ID**: `image`
+ * - **Description**: Image
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageSlice = prismic.SharedSlice<"image", ImageSliceVariation>;
 
 /**
  * Primary content in *RichText → Primary*
@@ -350,6 +409,12 @@ declare module "@prismicio/client" {
       ButtonSliceDefaultPrimary,
       ButtonSliceVariation,
       ButtonSliceDefault,
+      ImageSlice,
+      ImageSliceDefaultPrimary,
+      ImageSliceInlinePrimary,
+      ImageSliceVariation,
+      ImageSliceDefault,
+      ImageSliceInline,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,

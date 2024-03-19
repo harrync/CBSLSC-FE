@@ -5,7 +5,7 @@ import {
   SliceComponentProps,
   JSXMapSerializer,
 } from "@prismicio/react";
-import styles from "./index.module.css";
+import { CbLayout } from "@/stories/CbLayout";
 
 const components: JSXMapSerializer = {
   hyperlink: ({ node, children }) => {
@@ -28,9 +28,9 @@ type RichTextProps = SliceComponentProps<Content.RichTextSlice>;
  */
 const RichText = ({ slice }: RichTextProps): JSX.Element => {
   return (
-    <section className={styles.richtext}>
+    <CbLayout container classes="col-7">
       <PrismicRichText field={slice.primary.content} components={components} />
-    </section>
+    </CbLayout>
   );
 };
 

@@ -35,19 +35,6 @@
             "placeholder_true": "true",
             "placeholder_false": "false"
           }
-        },
-        "size": {
-          "type": "Select",
-          "config": {
-            "label": "Size",
-            "placeholder": "",
-            "options": [
-              "small",
-              "medium",
-              "large"
-            ],
-            "default_value": "small"
-          }
         }
       },
       "items": {}

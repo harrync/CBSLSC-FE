@@ -1,0 +1,29 @@
+@use "@/styles/helpers" as *;
+
+.a-image {
+  padding: 0;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &--inline {
+    padding: var(--space-0-5);
+    border: var(--space-0-5) solid var(--yellow);
+  }
+
+  &--full {
+    --imageMargin: var(--space-3);
+    margin: var(--imageMargin) 0;
+
+    @include media(">=sm") {
+      --imageMargin: var(--space-5);
+    }
+
+    img {
+      clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    }
+  }
+}

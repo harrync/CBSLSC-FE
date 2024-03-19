@@ -1,13 +1,12 @@
 "use client";
 
 import React from "react";
-import "./button.scss";
+import "./cb-button.scss";
 import { KeyTextField, LinkField } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
 
 interface ButtonProps {
   primary?: boolean;
-  size?: "small" | "medium" | "large";
   label: string | KeyTextField;
   link: LinkField;
 }
@@ -15,9 +14,8 @@ interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({
+export const CbButton = ({
   primary = false,
-  size = "medium",
   label,
   link,
   ...props
@@ -26,7 +24,7 @@ export const Button = ({
   return (
     <PrismicNextLink
       field={link}
-      className={["a-button", `a-button--${size}`, mode].join(" ")}
+      className={["a-button", mode].join(" ")}
       {...props}
     >
       {label}

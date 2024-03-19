@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "./Button";
+import { CbButton } from ".";
 
 const meta = {
-  title: "Example/Button",
-  component: Button,
+  title: "Button",
+  component: CbButton,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
   args: { label: "Button", link: undefined },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof CbButton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -29,14 +29,12 @@ export const Secondary: Story = {
 
 export const Large: Story = {
   args: {
-    size: "large",
     label: "Button",
   },
 };
 
 export const Small: Story = {
   args: {
-    size: "small",
     label: "Button",
   },
 };
