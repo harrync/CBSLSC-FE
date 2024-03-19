@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import "./button.css";
+import "./button.scss";
 import { KeyTextField, LinkField } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
 
