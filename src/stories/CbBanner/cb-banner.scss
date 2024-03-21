@@ -1,0 +1,55 @@
+@use '@/styles/helpers' as *;
+
+.a-banner {
+  @include angle;
+  --overlayColor: var(--yellow);
+  position: relative;
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+
+  @include media('>=sm') {
+    margin-bottom: var(--space-4);
+    min-height: 35vh;
+  }
+
+  &::before,
+  img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+  &::before {
+    content: '';
+
+    z-index: 1;
+  }
+
+  &::before {
+    background-color: var(--overlayColor);
+    mix-blend-mode: hard-light;
+  }
+
+  img {
+    object-fit: cover;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+
+    h1 {
+      color: var(--black);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      text-align: center;
+    }
+  }
+}

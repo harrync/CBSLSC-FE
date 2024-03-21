@@ -17,7 +17,7 @@ interface Props {
 export const CbImage = ({ variant, field, ...props }: Props) => {
   if (variant === 'inline') {
     return (
-      <CbLayout container classes="col-9">
+      <CbLayout container classes="col-sm-11 col-md-10 col-lg-8">
         <figure className="a-image a-image--inline">
           <PrismicNextImage field={field} {...props} />
         </figure>

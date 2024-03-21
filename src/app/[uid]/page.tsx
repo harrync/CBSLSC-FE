@@ -8,6 +8,7 @@ import { createClient } from '@/prismicio';
 import { components } from '@/slices';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
+import { CbBanner } from '@/stories/CbBanner';
 
 type Params = { uid: string };
 
@@ -48,6 +49,10 @@ export default async function Page({ params }: { params: Params }) {
   return (
     <>
       <Navigation client={client} />
+      <CbBanner
+        title={prismic.asText(page.data.title)}
+        image={page.data.banner_image}
+      />
       <SliceZone slices={page.data.slices} components={components} />
       <Footer client={client} />
     </>

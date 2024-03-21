@@ -22,11 +22,22 @@
           "single": "heading1"
         }
       },
+      "banner_image": {
+        "type": "Image",
+        "config": {
+          "label": "Banner image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "faqs": {
+              "type": "SharedSlice"
+            },
             "image": {
               "type": "SharedSlice"
             },

@@ -1,0 +1,42 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"question",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Cillum voluptate ut minim culpa ex est consequat minim proident."
+									}
+								}
+							]
+						}
+					],
+					[
+						"answer",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Sunt velit laboris aliqua."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

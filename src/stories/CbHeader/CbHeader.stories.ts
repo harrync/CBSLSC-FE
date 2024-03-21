@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Cb{{pascalCase name}} } from ".";
+import { CbHeader } from ".";
 
 const meta = {
-  title: "{{titleCase name}}",
-  component: Cb{{pascalCase name}},
+  title: "Header",
+  component: CbHeader,
   parameters: {
     layout: "fullscreen",
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof Cb{{pascalCase name}}>;
+} satisfies Meta<typeof CbHeader>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

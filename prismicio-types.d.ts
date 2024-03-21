@@ -133,7 +133,11 @@ export type MainMenuDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = ImageSlice | ButtonSlice | RichTextSlice;
+type PageDocumentDataSlicesSlice =
+  | FaqsSlice
+  | ImageSlice
+  | ButtonSlice
+  | RichTextSlice;
 
 /**
  * Content for Page documents
@@ -149,6 +153,17 @@ interface PageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.TitleField;
+
+  /**
+   * Banner image field in *Page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.banner_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  banner_image: prismic.ImageField<never>;
 
   /**
    * Slice Zone field in *Page*
@@ -269,6 +284,58 @@ type ButtonSliceVariation = ButtonSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type ButtonSlice = prismic.SharedSlice<'button', ButtonSliceVariation>;
+
+/**
+ * Primary content in *Faqs → Items*
+ */
+export interface FaqsSliceDefaultItem {
+  /**
+   * Question field in *Faqs → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faqs.items[].question
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  question: prismic.RichTextField;
+
+  /**
+   * Answer field in *Faqs → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faqs.items[].answer
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  answer: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Faqs Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqsSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Record<string, never>,
+  Simplify<FaqsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Faqs*
+ */
+type FaqsSliceVariation = FaqsSliceDefault;
+
+/**
+ * Faqs Shared Slice
+ *
+ * - **API ID**: `faqs`
+ * - **Description**: Faqs
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqsSlice = prismic.SharedSlice<'faqs', FaqsSliceVariation>;
 
 /**
  * Primary content in *Image → Primary*
@@ -409,6 +476,10 @@ declare module '@prismicio/client' {
       ButtonSliceDefaultPrimary,
       ButtonSliceVariation,
       ButtonSliceDefault,
+      FaqsSlice,
+      FaqsSliceDefaultItem,
+      FaqsSliceVariation,
+      FaqsSliceDefault,
       ImageSlice,
       ImageSliceDefaultPrimary,
       ImageSliceInlinePrimary,
