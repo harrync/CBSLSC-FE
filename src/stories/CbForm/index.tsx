@@ -9,5 +9,5 @@ interface Props {
 }
 
 export const CbForm = ({ title, ...props }: Props) => {
-  return <>{title}</>;
+  return <div data-tf-live={title}></div>;
 };
