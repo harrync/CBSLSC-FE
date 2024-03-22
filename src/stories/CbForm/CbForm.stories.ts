@@ -9,7 +9,7 @@ const meta = {
   },
   tags: ['autodocs'],
   args: {
-    formId: 'Y2Lw7REAACIAK5Jq',
+    title: 'Y2Lw7REAACIAK5Jq',
   },
 } satisfies Meta<typeof CbForm>;
 
