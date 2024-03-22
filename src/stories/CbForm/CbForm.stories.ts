@@ -9,7 +9,8 @@ const meta = {
   },
   tags: ['autodocs'],
   args: {
-    title: 'Y2Lw7REAACIAK5Jq',
+    title: 'Example form embed',
+    form_id: '01HSJWM9KAQ0GPV5M88X7CRPC7',
   },
 } satisfies Meta<typeof CbForm>;
 

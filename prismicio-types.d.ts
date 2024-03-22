@@ -355,6 +355,16 @@ export type FaqsSlice = prismic.SharedSlice<'faqs', FaqsSliceVariation>;
  */
 export interface FormSliceDefaultPrimary {
   /**
+   * title field in *Form → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: form.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
    * Form id field in *Form → Primary*
    *
    * - **Field Type**: Text

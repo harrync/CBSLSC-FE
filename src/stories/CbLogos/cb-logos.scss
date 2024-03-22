@@ -9,6 +9,10 @@
   flex-direction: column;
   gap: var(--space-4);
 
+  @include media('>=sm') {
+    margin: var(--space-4) 0;
+  }
+
   &::before,
   &::after {
     content: '';
@@ -31,10 +35,11 @@
     align-items: center;
     flex-wrap: wrap;
     gap: var(--space-4);
-    margin: var(--space-2) 0;
+    margin: 0 0 var(--space-2);
 
     @include media('>=sm') {
       gap: var(--space-8);
+      margin-top: var(--space-2);
     }
   }
 

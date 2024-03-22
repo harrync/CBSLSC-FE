@@ -12,15 +12,7 @@ export type FormProps = SliceComponentProps<Content.FormSlice>;
  * Component for "Form" Slices.
  */
 const Form = ({ slice }: FormProps): JSX.Element => {
-  return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      {/* <div data-tf-live={slice.primary.form_id}></div> */}
-      <CbForm title={slice.primary.form_id} />
-    </section>
-  );
+  return <CbForm title={slice.primary.title} form_id={slice.primary.form_id} />;
 };
 
 export default Form;

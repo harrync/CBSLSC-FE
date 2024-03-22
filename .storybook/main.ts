@@ -4,7 +4,6 @@ import { resolve } from 'path';
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
-    '@storybook/addon-onboarding',
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@chromatic-com/storybook',
@@ -22,6 +21,10 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
+  previewHead: (head) => `
+    ${head}
+    ${'<script src="https://embed.typeform.com/next/embed.js" defer></script>'}
+  `,
   webpackFinal: async (config, { configType }) => {
     (config.resolve = {
       ...config.resolve,

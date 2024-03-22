@@ -31,7 +31,7 @@ export const CbLogos = ({ title, logos, ...props }: Props) => {
   });
 
   return (
-    <CbLayout container classes="col-sm-9">
+    <CbLayout container classes="col-sm-12">
       <div className="a-logos">
         <h2>{title}</h2>
         <div className="a-logos__list">{logosList}</div>
