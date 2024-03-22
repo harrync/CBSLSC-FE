@@ -134,6 +134,8 @@ export type MainMenuDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | FormSlice
+  | LogosSlice
   | FaqsSlice
   | ImageSlice
   | ButtonSlice
@@ -164,6 +166,17 @@ interface PageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   banner_image: prismic.ImageField<never>;
+
+  /**
+   * Logo field in *Page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
 
   /**
    * Slice Zone field in *Page*
@@ -338,6 +351,48 @@ type FaqsSliceVariation = FaqsSliceDefault;
 export type FaqsSlice = prismic.SharedSlice<'faqs', FaqsSliceVariation>;
 
 /**
+ * Primary content in *Form → Primary*
+ */
+export interface FormSliceDefaultPrimary {
+  /**
+   * Form id field in *Form → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: form.primary.form_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  form_id: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Form Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FormSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<FormSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Form*
+ */
+type FormSliceVariation = FormSliceDefault;
+
+/**
+ * Form Shared Slice
+ *
+ * - **API ID**: `form`
+ * - **Description**: Form
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FormSlice = prismic.SharedSlice<'form', FormSliceVariation>;
+
+/**
  * Primary content in *Image → Primary*
  */
 export interface ImageSliceDefaultPrimary {
@@ -406,6 +461,73 @@ type ImageSliceVariation = ImageSliceDefault | ImageSliceInline;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type ImageSlice = prismic.SharedSlice<'image', ImageSliceVariation>;
+
+/**
+ * Primary content in *Logos → Primary*
+ */
+export interface LogosSliceDefaultPrimary {
+  /**
+   * Title field in *Logos → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: logos.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Logos → Items*
+ */
+export interface LogosSliceDefaultItem {
+  /**
+   * Logo field in *Logos → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: logos.items[].logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * Link field in *Logos → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: logos.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Default variation for Logos Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LogosSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<LogosSliceDefaultPrimary>,
+  Simplify<LogosSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Logos*
+ */
+type LogosSliceVariation = LogosSliceDefault;
+
+/**
+ * Logos Shared Slice
+ *
+ * - **API ID**: `logos`
+ * - **Description**: Logos
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LogosSlice = prismic.SharedSlice<'logos', LogosSliceVariation>;
 
 /**
  * Primary content in *RichText → Primary*
@@ -480,12 +602,21 @@ declare module '@prismicio/client' {
       FaqsSliceDefaultItem,
       FaqsSliceVariation,
       FaqsSliceDefault,
+      FormSlice,
+      FormSliceDefaultPrimary,
+      FormSliceVariation,
+      FormSliceDefault,
       ImageSlice,
       ImageSliceDefaultPrimary,
       ImageSliceInlinePrimary,
       ImageSliceVariation,
       ImageSliceDefault,
       ImageSliceInline,
+      LogosSlice,
+      LogosSliceDefaultPrimary,
+      LogosSliceDefaultItem,
+      LogosSliceVariation,
+      LogosSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,

@@ -7,6 +7,7 @@ import { createClient } from '@/prismicio';
 import { components } from '@/slices';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
+import { CbBanner } from '@/stories/CbBanner';
 
 // This component renders your homepage.
 //
@@ -36,6 +37,11 @@ export default async function Index() {
   return (
     <>
       <Navigation client={client} />
+      <CbBanner
+        title={prismic.asText(home.data.title)}
+        image={home.data.banner_image}
+        logo={home.data.logo}
+      />
       <SliceZone slices={home.data.slices} components={components} />
       <Footer client={client} />
     </>

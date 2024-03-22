@@ -1,0 +1,56 @@
+@use '@/styles/helpers' as *;
+
+.a-logos {
+  text-align: center;
+  margin: var(--space-2) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: var(--space-4);
+
+  &::before,
+  &::after {
+    content: '';
+    height: 1px;
+    width: 30%;
+    min-width: 150px;
+    display: block;
+    margin: 0 auto;
+    background-color: var(--grey);
+  }
+
+  h2 {
+    margin: 0;
+    color: var(--red);
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin: var(--space-2) 0;
+
+    @include media('>=sm') {
+      gap: var(--space-8);
+    }
+  }
+
+  &__logo {
+    &:hover {
+      transform: scale(1.08);
+    }
+
+    img {
+      height: 50px;
+      width: auto;
+      display: block;
+
+      @include media('>=sm') {
+        height: 75px;
+      }
+    }
+  }
+}

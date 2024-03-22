@@ -11,6 +11,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script src="https://embed.typeform.com/next/embed.js" async></script>
+      </head>
       <body>{children}</body>
       <PrismicPreview repositoryName={repositoryName} />
     </html>

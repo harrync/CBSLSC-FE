@@ -9,13 +9,17 @@ import { CbLayout } from '@/stories/CbLayout';
 interface Props {
   title: string;
   image?: ImageField;
+  logo?: ImageField;
 }
 
-export const CbBanner = ({ title, image, ...props }: Props) => {
+export const CbBanner = ({ title, image, logo, ...props }: Props) => {
   return (
     <section className="a-banner">
-      {image && <PrismicNextImage field={image} priority />}
+      {image && (
+        <PrismicNextImage field={image} priority className="a-banner__img" />
+      )}
       <CbLayout container classes="a-banner__content col-12">
+        {logo && <PrismicNextImage field={logo} className="a-banner__logo" />}
         <h1>{title}</h1>
       </CbLayout>
     </section>

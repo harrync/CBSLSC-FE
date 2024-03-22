@@ -18,6 +18,7 @@ const meta = {
       id: 'ZfoB2w4qyfNhFy_l',
       edit: { x: 0, y: 0, zoom: 1, background: 'transparent' },
     },
+    logo: undefined,
   },
 } satisfies Meta<typeof CbBanner>;
 

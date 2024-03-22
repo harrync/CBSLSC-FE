@@ -23,7 +23,7 @@
     margin: var(--imageMargin) 0;
 
     @include media('>=sm') {
-      --imageMargin: var(--space-5);
+      --imageMargin: var(--space-2);
     }
 
     img {
