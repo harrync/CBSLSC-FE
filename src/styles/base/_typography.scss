@@ -34,6 +34,25 @@ strong {
 
 a {
   transition: var(--transition);
+  text-decoration: none;
+  padding-bottom: 2px;
+  background: linear-gradient(to right, var(--yellow), var(--yellow)),
+    linear-gradient(to right, var(--red), var(--red));
+  background-size:
+    100% 2px,
+    0 2px;
+  background-position:
+    100% 100%,
+    0 100%;
+  background-repeat: no-repeat;
+  transition: var(--transition);
+  color: var(--black);
+
+  &:hover {
+    background-size:
+      0 2px,
+      100% 2px;
+  }
 }
 
 h1,
@@ -41,6 +60,11 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   margin-top: 0;
+}
+
+h3 {
+  margin-bottom: var(--space-0-5);
 }

@@ -28,7 +28,7 @@ export async function generateMetadata({
     .catch(() => notFound());
 
   return {
-    title: prismic.asText(page.data.title),
+    title: `${prismic.asText(page.data.title)} | Carlyon Bay SLSC`,
     description: page.data.meta_description,
     openGraph: {
       title: page.data.meta_title || undefined,

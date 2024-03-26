@@ -44,6 +44,8 @@
   }
 
   &__logo {
+    background: none;
+
     &:hover {
       transform: scale(1.08);
     }

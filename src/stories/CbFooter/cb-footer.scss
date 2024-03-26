@@ -3,8 +3,10 @@
 .a-footer {
   margin-top: var(--space-4);
   border-bottom: var(--space) solid var(--red);
+  text-align: center;
 
   @include media('>=sm') {
+    text-align: left;
     margin-top: var(--space-8);
   }
 
@@ -24,6 +26,8 @@
     gap: var(--space);
 
     &-link {
+      background: none;
+
       &:hover {
         opacity: 0.7;
       }

@@ -5,7 +5,7 @@
   position: relative;
 
   &__underlay {
-    background-color: var(--black);
+    background-color: var(--headerBackground);
     display: block;
     position: absolute;
     top: 0;
@@ -20,12 +20,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 0;
+    margin-bottom: var(--space-2);
     position: relative;
     background-color: var(--white);
 
     @include media('>=sm') {
-      margin-bottom: var(--space-4);
+      margin-bottom: var(--space-6);
       min-height: 35vh;
     }
 

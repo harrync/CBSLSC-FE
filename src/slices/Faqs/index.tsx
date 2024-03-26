@@ -1,3 +1,4 @@
+import { CbFaqs } from '@/stories/CbFaqs';
 import { Content } from '@prismicio/client';
 import { SliceComponentProps } from '@prismicio/react';
 
@@ -10,14 +11,14 @@ export type FaqsProps = SliceComponentProps<Content.FaqsSlice>;
  * Component for "Faqs" Slices.
  */
 const Faqs = ({ slice }: FaqsProps): JSX.Element => {
-  return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      Placeholder component for faqs (variation: {slice.variation}) Slices
-    </section>
-  );
+  const faqs = slice.items.map((faq, index) => {
+    return {
+      question: faq.question,
+      answer: faq.answer,
+    };
+  });
+
+  return <CbFaqs faqs={faqs} />;
 };
 
 export default Faqs;

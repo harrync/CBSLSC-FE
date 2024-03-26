@@ -125,7 +125,6 @@ type PageDocumentDataSlicesSlice =
   | LogosSlice
   | FaqsSlice
   | ImageSlice
-  | ButtonSlice
   | RichTextSlice;
 
 /**
@@ -215,81 +214,18 @@ export type AllDocumentTypes =
   | PageDocument;
 
 /**
- * Primary content in *Button → Primary*
- */
-export interface ButtonSliceDefaultPrimary {
-  /**
-   * Label field in *Button → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: button.primary.label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  label: prismic.KeyTextField;
-
-  /**
-   * Link field in *Button → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: button.primary.link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-
-  /**
-   * Primary field in *Button → Primary*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: button.primary.primary
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  primary: prismic.BooleanField;
-}
-
-/**
- * Default variation for Button Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ButtonSliceDefault = prismic.SharedSliceVariation<
-  'default',
-  Simplify<ButtonSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Button*
- */
-type ButtonSliceVariation = ButtonSliceDefault;
-
-/**
- * Button Shared Slice
- *
- * - **API ID**: `button`
- * - **Description**: Button
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ButtonSlice = prismic.SharedSlice<'button', ButtonSliceVariation>;
-
-/**
  * Primary content in *Faqs → Items*
  */
 export interface FaqsSliceDefaultItem {
   /**
    * Question field in *Faqs → Items*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: faqs.items[].question
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  question: prismic.RichTextField;
+  question: prismic.KeyTextField;
 
   /**
    * Answer field in *Faqs → Items*
@@ -690,10 +626,6 @@ declare module '@prismicio/client' {
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
-      ButtonSlice,
-      ButtonSliceDefaultPrimary,
-      ButtonSliceVariation,
-      ButtonSliceDefault,
       FaqsSlice,
       FaqsSliceDefaultItem,
       FaqsSliceVariation,

@@ -1,9 +1,16 @@
 @use 'breakpoints' as *;
 
 @mixin angle {
-  clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+  --angle: 10px;
+
+  clip-path: polygon(
+    0 var(--angle),
+    100% 0,
+    100% calc(100% - var(--angle)),
+    0 100%
+  );
 
   @include media('>=sm') {
-    clip-path: polygon(0 12.5%, 100% 0, 100% 87.5%, 0 100%);
+    --angle: 50px;
   }
 }
