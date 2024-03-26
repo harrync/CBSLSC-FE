@@ -53,7 +53,6 @@ export default async function Page({ params }: { params: Params }) {
       <CbBanner
         title={prismic.asText(page.data.title)}
         image={page.data.banner_image}
-        logo={page.data.logo}
       />
       <SliceZone slices={page.data.slices} components={components} />
       <Footer client={client} />
