@@ -9,6 +9,7 @@ import { components } from '@/slices';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { CbBanner } from '@/stories/CbBanner';
+import { useRouter } from 'next/router';
 
 type Params = { uid: string };
 
@@ -48,7 +49,7 @@ export default async function Page({ params }: { params: Params }) {
 
   return (
     <>
-      <Navigation client={client} />
+      <Navigation client={client} currentPath={page.uid} />
       <CbBanner
         title={prismic.asText(page.data.title)}
         image={page.data.banner_image}

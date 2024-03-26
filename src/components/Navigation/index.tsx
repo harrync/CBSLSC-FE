@@ -1,23 +1,47 @@
-import { Client, Content, isFilled } from '@prismicio/client';
-import { PrismicLink } from '@prismicio/react';
+import { Client, Content } from '@prismicio/client';
+import { PrismicNextLink } from '@prismicio/next';
 
 export const Navigation = async ({
+  currentPath,
   client,
 }: {
+  currentPath?: string;
   client: Client<Content.AllDocumentTypes>;
 }): Promise<JSX.Element> => {
-  const navigation = await client.getSingle('main_menu');
+  const navigation = await client.getSingle('navigation');
 
   return (
     <nav>
-      {isFilled.group(navigation.data.menu_items) &&
-        navigation.data.menu_items.map((item) => {
+      <ul>
+        {navigation.data.slices.map((slice) => {
+          console.log(slice.primary.link);
+
           return (
-            <PrismicLink key={item.label} field={item.link}>
-              {item.label}
-            </PrismicLink>
+            <li key={slice.id}>
+              <PrismicNextLink
+                field={slice.primary.link}
+                className={slice.items.length > 0 ? 'dropdown' : ''}
+              >
+                {slice.primary.label}
+              </PrismicNextLink>
+
+              {slice.items.length > 0 && (
+                <ul>
+                  {slice.items.map((item) => {
+                    return (
+                      <li key={JSON.stringify(item)}>
+                        <PrismicNextLink field={item.child_link}>
+                          {item.child_label}
+                        </PrismicNextLink>
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+            </li>
           );
         })}
+      </ul>
     </nav>
   );
 };
