@@ -31,6 +31,16 @@ export interface FooterDocumentDataSocialLinksItem {
     'Email' | 'Facebook' | 'Twitter' | 'Instagram',
     'filled'
   >;
+
+  /**
+   * Icon field in *Footer → Social links*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.social_links[].icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
 }
 
 /**

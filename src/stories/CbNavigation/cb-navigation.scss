@@ -1,0 +1,106 @@
+@use '@/styles/helpers' as *;
+
+.a-navigation {
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  z-index: 1;
+  align-self: stretch;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+  }
+
+  > ul {
+    justify-content: flex-start;
+
+    li {
+      position: relative;
+      display: flex;
+      align-items: stretch;
+      position: relative;
+
+      &:hover,
+      &:focus-within {
+        transition: var(--transition);
+
+        > .dropdown {
+          background-color: var(--red);
+        }
+
+        ul {
+          visibility: visible;
+          opacity: 1;
+          display: block;
+        }
+      }
+
+      > a {
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: var(--space-0-5);
+          background-color: transparent;
+          transition: var(--transition);
+          display: block;
+        }
+
+        &:hover {
+          &::before {
+            background-color: var(--red);
+          }
+        }
+      }
+    }
+
+    ul {
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+      display: none;
+      min-width: 7rem;
+      transition: var(--transition);
+      background-color: var(--red);
+
+      a {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space);
+    color: inherit;
+    padding: var(--space) var(--space-2);
+    white-space: nowrap;
+    transition: var(--transition);
+
+    &.dropdown {
+      &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 7px solid var(--white);
+      }
+    }
+  }
+}

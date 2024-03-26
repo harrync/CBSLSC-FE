@@ -15,13 +15,16 @@ interface Props {
 export const CbBanner = ({ title, image, logo, ...props }: Props) => {
   return (
     <section className="a-banner">
-      {image && (
-        <PrismicNextImage field={image} priority className="a-banner__img" />
-      )}
-      <CbLayout container classes="a-banner__content col-12">
-        {logo && <PrismicNextImage field={logo} className="a-banner__logo" />}
-        <h1>{title}</h1>
-      </CbLayout>
+      <span className="a-banner__underlay"></span>
+      <div className="a-banner__overlay">
+        {image && (
+          <PrismicNextImage field={image} priority className="a-banner__img" />
+        )}
+        <CbLayout container classes="a-banner__content col-12">
+          {logo && <PrismicNextImage field={logo} className="a-banner__logo" />}
+          <h1>{title}</h1>
+        </CbLayout>
+      </div>
     </section>
   );
 };

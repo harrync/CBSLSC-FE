@@ -8,6 +8,7 @@ import { components } from '@/slices';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { CbBanner } from '@/stories/CbBanner';
+import { CbHeader } from '@/stories/CbHeader';
 
 // This component renders your homepage.
 //
@@ -36,7 +37,9 @@ export default async function Index() {
 
   return (
     <>
-      <Navigation client={client} />
+      <CbHeader>
+        <Navigation client={client} currentPath={home.uid} />
+      </CbHeader>
       <CbBanner
         title={prismic.asText(home.data.title)}
         image={home.data.banner_image}

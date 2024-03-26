@@ -21,10 +21,6 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
-  previewHead: (head) => `
-    ${head}
-    ${'<script src="https://embed.typeform.com/next/embed.js" defer></script>'}
-  `,
   webpackFinal: async (config, { configType }) => {
     (config.resolve = {
       ...config.resolve,

@@ -1,18 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { CbForm } from '.';
+import { CbFooter } from '.';
 
 const meta = {
-  title: 'Form',
-  component: CbForm,
+  title: 'Footer',
+  component: CbFooter,
   parameters: {
     layout: 'fullscreen',
   },
   tags: ['autodocs'],
   args: {
-    title: 'Example form embed',
-    form_id: 'Tckupi8l',
+    footerText: 'Copyright text',
   },
-} satisfies Meta<typeof CbForm>;
+} satisfies Meta<typeof CbFooter>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -28,6 +28,14 @@
                 "options": ["Email", "Facebook", "Twitter", "Instagram"],
                 "default_value": "Email"
               }
+            },
+            "icon": {
+              "type": "Image",
+              "config": {
+                "label": "Icon",
+                "constraint": {},
+                "thumbnails": []
+              }
             }
           }
         }

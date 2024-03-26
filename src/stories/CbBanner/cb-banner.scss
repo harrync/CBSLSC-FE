@@ -1,22 +1,52 @@
 @use '@/styles/helpers' as *;
 
 .a-banner {
-  @include angle;
   --overlayColor: var(--yellow);
   position: relative;
-  min-height: 30vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0;
 
-  @include media('>=sm') {
-    margin-bottom: var(--space-4);
-    min-height: 35vh;
+  &__underlay {
+    background-color: var(--black);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
   }
 
-  &::before,
+  &__overlay {
+    @include angle;
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    position: relative;
+    background-color: var(--white);
+
+    @include media('>=sm') {
+      margin-bottom: var(--space-4);
+      min-height: 35vh;
+    }
+
+    &::after {
+      height: 100%;
+      width: 100%;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      content: '';
+      background-color: var(--overlayColor);
+      mix-blend-mode: hard-light;
+      z-index: 1;
+    }
+  }
+
   &__img {
+    object-fit: cover;
+    opacity: 0.7;
     height: 100%;
     width: 100%;
     display: block;
@@ -24,22 +54,6 @@
     top: 0;
     left: 0;
     z-index: 0;
-  }
-
-  &::before {
-    content: '';
-
-    z-index: 1;
-  }
-
-  &::before {
-    background-color: var(--overlayColor);
-    mix-blend-mode: hard-light;
-  }
-
-  &__img {
-    object-fit: cover;
-    opacity: 0.7;
   }
 
   &__logo {

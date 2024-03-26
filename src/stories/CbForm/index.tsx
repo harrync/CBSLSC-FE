@@ -15,7 +15,7 @@ export const CbForm = ({ title, form_id, ...props }: Props) => {
   return (
     <CbLayout container classes="col-sm-10 col-md-9 col-lg-7">
       <h2>{title}</h2>
-      <Widget id={String(form_id)} />
+      <Widget id={String(form_id)} className="a-form" />
     </CbLayout>
   );
 };

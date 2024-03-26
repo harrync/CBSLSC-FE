@@ -1,5 +1,5 @@
-import { Client, Content, isFilled } from '@prismicio/client';
-import { PrismicLink } from '@prismicio/react';
+import { CbFooter } from '@/stories/CbFooter';
+import { Client, Content } from '@prismicio/client';
 
 export const Footer = async ({
   client,
@@ -9,10 +9,9 @@ export const Footer = async ({
   const footer = await client.getSingle('footer');
 
   return (
-    <footer>
-      <small>
-        &copy; {new Date().getFullYear()} {footer.data.copyright_text}
-      </small>
-    </footer>
+    <CbFooter
+      footerText={footer.data.copyright_text}
+      socialLinks={footer.data.social_links}
+    />
   );
 };

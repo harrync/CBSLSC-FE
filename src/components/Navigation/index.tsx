@@ -1,5 +1,5 @@
+import { CbNavigation } from '@/stories/CbNavigation';
 import { Client, Content } from '@prismicio/client';
-import { PrismicNextLink } from '@prismicio/next';
 
 export const Navigation = async ({
   currentPath,
@@ -10,38 +10,18 @@ export const Navigation = async ({
 }): Promise<JSX.Element> => {
   const navigation = await client.getSingle('navigation');
 
-  return (
-    <nav>
-      <ul>
-        {navigation.data.slices.map((slice) => {
-          // console.log(slice.primary.link);
+  const links = navigation.data.slices.map((slice) => {
+    return {
+      label: slice.primary.label,
+      link: slice.primary.link,
+      items: slice.items.map((item) => {
+        return {
+          label: item.child_label,
+          link: item.child_link,
+        };
+      }),
+    };
+  });
 
-          return (
-            <li key={slice.id}>
-              <PrismicNextLink
-                field={slice.primary.link}
-                className={slice.items.length > 0 ? 'dropdown' : ''}
-              >
-                {slice.primary.label}
-              </PrismicNextLink>
-
-              {slice.items.length > 0 && (
-                <ul>
-                  {slice.items.map((item) => {
-                    return (
-                      <li key={JSON.stringify(item)}>
-                        <PrismicNextLink field={item.child_link}>
-                          {item.child_label}
-                        </PrismicNextLink>
-                      </li>
-                    );
-                  })}
-                </ul>
-              )}
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
-  );
+  return <CbNavigation links={links} currentPath={currentPath} />;
 };
