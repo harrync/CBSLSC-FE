@@ -14,7 +14,7 @@ export const Navigation = async ({
     <nav>
       <ul>
         {navigation.data.slices.map((slice) => {
-          console.log(slice.primary.link);
+          // console.log(slice.primary.link);
 
           return (
             <li key={slice.id}>

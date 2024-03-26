@@ -40,7 +40,6 @@ export default async function Index() {
       <CbBanner
         title={prismic.asText(home.data.title)}
         image={home.data.banner_image}
-        logo={home.data.logo}
       />
       <SliceZone slices={home.data.slices} components={components} />
       <Footer client={client} />
