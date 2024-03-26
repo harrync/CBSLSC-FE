@@ -1,5 +1,4 @@
 import { CbForm } from '@/stories/CbForm';
-import { CbLayout } from '@/stories/CbLayout';
 import { Content } from '@prismicio/client';
 import { SliceComponentProps } from '@prismicio/react';
 

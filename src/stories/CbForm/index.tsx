@@ -4,6 +4,7 @@ import React from 'react';
 import './cb-form.scss';
 import { KeyTextField } from '@prismicio/client';
 import { CbLayout } from '@/stories/CbLayout';
+import { Widget } from '@typeform/embed-react';
 
 interface Props {
   title?: string | KeyTextField;
@@ -14,7 +15,7 @@ export const CbForm = ({ title, form_id, ...props }: Props) => {
   return (
     <CbLayout container classes="col-sm-10 col-md-9 col-lg-7">
       <h2>{title}</h2>
-      <div data-tf-live={form_id}></div>
+      <Widget id={String(form_id)} />
     </CbLayout>
   );
 };
