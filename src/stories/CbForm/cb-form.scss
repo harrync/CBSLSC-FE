@@ -5,7 +5,7 @@
   background-color: var(--yellow);
   padding: var(--space-4) 0;
   margin: var(--space) 0;
-  // min-height: 800px;
+  min-height: 800px;
   backface-visibility: hidden;
 
   @include media('>=sm') {
