@@ -3,6 +3,7 @@ import { repositoryName } from '@/prismicio';
 
 import '@/styles/reset.scss';
 import '@/styles/global.scss';
+import Script from 'next/script';
 
 export default function RootLayout({
   children,
@@ -35,6 +36,18 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#df302a" />
         <meta name="theme-color" content="#ffffff" />
       </head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-GLZD5V2EPD"
+        async
+      />
+      <Script id="gtm" strategy="afterInteractive">
+        {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-GLZD5V2EPD');
+      `}
+      </Script>
       <body>{children}</body>
       <PrismicPreview repositoryName={repositoryName} />
     </html>
