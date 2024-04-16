@@ -21,7 +21,7 @@ export const CbForm = ({ title, form_id, ...props }: Props) => {
         <Widget
           id={String(form_id)}
           // className="a-form__form"
-          // autoResize
+          autoResize
           // inlineOnMobile
           // noScrollbars
           // hideFooter
