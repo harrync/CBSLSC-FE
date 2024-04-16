@@ -1,7 +1,7 @@
 @use '@/styles/helpers' as *;
 
 hr {
-  --dividerColor: var(--grey);
+  --dividerColor: var(--greyDark);
   border: 0;
   display: block;
   height: 1px;
@@ -41,5 +41,14 @@ hr {
     background-color: white;
     border-bottom: 1px solid var(--dividerColor);
     border-right: 1px solid var(--dividerColor);
+  }
+
+  &.up {
+    &::after {
+      border-top: 1px solid var(--dividerColor);
+      border-left: 1px solid var(--dividerColor);
+      border-bottom: none;
+      border-right: none;
+    }
   }
 }

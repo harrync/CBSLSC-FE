@@ -14,5 +14,12 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    direction: 'down',
+  },
+};
+export const Up: Story = {
+  args: {
+    direction: 'up',
+  },
 };

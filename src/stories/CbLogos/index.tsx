@@ -5,6 +5,7 @@ import './cb-logos.scss';
 import { ImageField, KeyTextField, LinkField } from '@prismicio/client';
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
 import { CbLayout } from '@/stories/CbLayout';
+import { CbDivider } from '../CbDivider';
 
 interface Logo {
   logo: ImageField;
@@ -32,10 +33,12 @@ export const CbLogos = ({ title, logos, ...props }: Props) => {
 
   return (
     <CbLayout container classes="col-sm-12">
+      <CbDivider />
       <div className="a-logos">
         <h2>{title}</h2>
         <div className="a-logos__list">{logosList}</div>
       </div>
+      <CbDivider direction="up" />
     </CbLayout>
   );
 };
