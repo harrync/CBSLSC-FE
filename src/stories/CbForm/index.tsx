@@ -18,7 +18,16 @@ export const CbForm = ({ title, form_id, ...props }: Props) => {
         <h2>{title}</h2>
       </CbLayout>
       <CbLayout container classes="col-sm-12">
-        <Widget id={String(form_id)} className="a-form__form" />
+        <Widget
+          id={String(form_id)}
+          className="a-form__form"
+          autoResize
+          inlineOnMobile
+          noScrollbars
+          hideFooter
+          hideHeaders
+          style={{ width: '100%', height: '100%' }}
+        />
       </CbLayout>
     </section>
   );
