@@ -1,0 +1,45 @@
+@use '@/styles/helpers' as *;
+
+hr {
+  --dividerColor: var(--grey);
+  border: 0;
+  display: block;
+  height: 1px;
+  margin: var(--space-2) 0;
+  position: relative;
+
+  @include media('>=sm') {
+    margin: var(--space-4) 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 5%;
+    right: 5%;
+    width: 90%;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      var(--dividerColor),
+      transparent
+    );
+    // background-color: var(--dividerColor);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: calc(var(--space-0-5) * -1);
+    left: calc(50% - var(--space-0-5));
+    width: var(--space);
+    height: var(--space);
+    transform: rotate(45deg);
+    background-color: white;
+    border-bottom: 1px solid var(--dividerColor);
+    border-right: 1px solid var(--dividerColor);
+  }
+}

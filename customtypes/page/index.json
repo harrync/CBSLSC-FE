@@ -35,6 +35,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "divider": {
+              "type": "SharedSlice"
+            },
             "form": {
               "type": "SharedSlice"
             },

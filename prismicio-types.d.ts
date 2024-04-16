@@ -121,6 +121,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | DividerSlice
   | FormSlice
   | LogosSlice
   | FaqsSlice
@@ -212,6 +213,36 @@ export type AllDocumentTypes =
   | FooterDocument
   | NavigationDocument
   | PageDocument;
+
+/**
+ * Default variation for Divider Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DividerSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *Divider*
+ */
+type DividerSliceVariation = DividerSliceDefault;
+
+/**
+ * Divider Shared Slice
+ *
+ * - **API ID**: `divider`
+ * - **Description**: Divider
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DividerSlice = prismic.SharedSlice<
+  'divider',
+  DividerSliceVariation
+>;
 
 /**
  * Primary content in *Faqs → Items*
@@ -626,6 +657,9 @@ declare module '@prismicio/client' {
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      DividerSlice,
+      DividerSliceVariation,
+      DividerSliceDefault,
       FaqsSlice,
       FaqsSliceDefaultItem,
       FaqsSliceVariation,

@@ -68,3 +68,9 @@ p {
 h3 {
   margin-bottom: var(--space-0-5);
 }
+
+p {
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
