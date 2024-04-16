@@ -26,7 +26,10 @@ export const CbForm = ({ title, form_id, ...props }: Props) => {
           noScrollbars
           hideFooter
           hideHeaders
-          style={{ width: '100%', height: '100%' }}
+          style={{
+            width: '100%',
+            height: '100%',
+          }}
         />
       </CbLayout>
     </section>
