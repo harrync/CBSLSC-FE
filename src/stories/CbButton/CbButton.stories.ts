@@ -26,15 +26,3 @@ export const Secondary: Story = {
     label: 'Button',
   },
 };
-
-export const Large: Story = {
-  args: {
-    label: 'Button',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    label: 'Button',
-  },
-};
