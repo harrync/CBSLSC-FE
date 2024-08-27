@@ -121,6 +121,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ButtonSlice
   | DividerSlice
   | FormSlice
   | LogosSlice
