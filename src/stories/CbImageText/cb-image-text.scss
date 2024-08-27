@@ -1,0 +1,43 @@
+@use '@/styles/helpers' as *;
+
+.a-image-text {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 1rem;
+  margin-bottom: var(--space-3);
+
+  @include media('>=sm') {
+    &__right {
+      img {
+        order: 1;
+      }
+    }
+  }
+
+  @include media('<sm') {
+    flex-direction: column;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-top: 6px;
+    display: block;
+    border-radius: var(--space);
+
+    @include media('>=sm') {
+      max-width: 250px;
+    }
+  }
+
+  &__text {
+    flex: 1;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+}

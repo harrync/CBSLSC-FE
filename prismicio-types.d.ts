@@ -121,6 +121,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ImageTextSlice
   | ButtonSlice
   | DividerSlice
   | FormSlice
@@ -472,6 +473,72 @@ type ImageSliceVariation = ImageSliceDefault | ImageSliceInline;
 export type ImageSlice = prismic.SharedSlice<'image', ImageSliceVariation>;
 
 /**
+ * Primary content in *ImageText → Primary*
+ */
+export interface ImageTextSliceDefaultPrimary {
+  /**
+   * Align right field in *ImageText → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: image_text.primary.align_right
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  align_right: prismic.BooleanField;
+
+  /**
+   * Image field in *ImageText → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Text field in *ImageText → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Default variation for ImageText Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageTextSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<ImageTextSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ImageText*
+ */
+type ImageTextSliceVariation = ImageTextSliceDefault;
+
+/**
+ * ImageText Shared Slice
+ *
+ * - **API ID**: `image_text`
+ * - **Description**: ImageText
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageTextSlice = prismic.SharedSlice<
+  'image_text',
+  ImageTextSliceVariation
+>;
+
+/**
  * Primary content in *Logos → Primary*
  */
 export interface LogosSliceDefaultPrimary {
@@ -731,6 +798,10 @@ declare module '@prismicio/client' {
       ImageSliceVariation,
       ImageSliceDefault,
       ImageSliceInline,
+      ImageTextSlice,
+      ImageTextSliceDefaultPrimary,
+      ImageTextSliceVariation,
+      ImageTextSliceDefault,
       LogosSlice,
       LogosSliceDefaultPrimary,
       LogosSliceDefaultItem,

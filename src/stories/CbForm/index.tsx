@@ -13,7 +13,7 @@ interface Props {
 
 export const CbForm = ({ title, form_id, ...props }: Props) => {
   const titleMarkup = title && (
-    <CbLayout container classes="col-sm-10 col-md-9">
+    <CbLayout container classes="col-sm-10 col-md-6">
       <h2>{title}</h2>
     </CbLayout>
   );
@@ -21,7 +21,7 @@ export const CbForm = ({ title, form_id, ...props }: Props) => {
   return (
     <section className="a-form">
       {titleMarkup}
-      <CbLayout container classes="col-sm-12">
+      <CbLayout container classes="col-sm-12 col-md-8">
         <Widget
           id={String(form_id)}
           // className="a-form__form"

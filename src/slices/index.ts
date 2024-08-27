@@ -8,6 +8,7 @@ export const components = {
   faqs: dynamic(() => import('./Faqs')),
   form: dynamic(() => import('./Form')),
   image: dynamic(() => import('./Image')),
+  image_text: dynamic(() => import('./ImageText')),
   logos: dynamic(() => import('./Logos')),
   navigation_item: dynamic(() => import('./NavigationItem')),
   rich_text: dynamic(() => import('./RichText')),
