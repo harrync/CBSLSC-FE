@@ -4,25 +4,33 @@
   font-weight: 900;
   border: 0;
   cursor: pointer;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   text-decoration: none;
   line-height: 1;
   font-size: 1.2rem;
-  padding: 1rem 2rem;
+  padding: 1.1rem 2rem 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin: 2rem auto;
+  justify-self: center;
+  align-self: center;
+  background-size:
+    100% 100%,
+    0 100%;
+  color: var(--black);
 
-  &--primary {
+  &:hover {
+    background-size:
+      0 100%,
+      100% 100%;
     color: white;
-    background-color: var(--red);
   }
 
-  &--secondary {
-    color: var(--black);
-    background-color: var(--yellow);
+  @include media('>=md') {
+    padding: 1.75rem 2rem 1.5rem;
+    font-size: 1.4rem;
   }
 }

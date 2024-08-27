@@ -1,3 +1,5 @@
+import { CbButton } from '@/stories/CbButton';
+import { CbLayout } from '@/stories/CbLayout';
 import { Content } from '@prismicio/client';
 import { SliceComponentProps } from '@prismicio/react';
 
@@ -11,12 +13,9 @@ export type ButtonProps = SliceComponentProps<Content.ButtonSlice>;
  */
 const Button = ({ slice }: ButtonProps): JSX.Element => {
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      Placeholder component for button (variation: {slice.variation}) Slices
-    </section>
+    <CbLayout container classes="col-sm-4">
+      <CbButton primary label={slice.primary.label} link={slice.primary.link} />
+    </CbLayout>
   );
 };
 

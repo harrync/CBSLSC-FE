@@ -9,6 +9,11 @@
 					"__TYPE__": "ExternalLink",
 					"url": "https://prismic.io"
 				}
+			},
+			"label": {
+				"__TYPE__": "FieldContent",
+				"value": "along",
+				"type": "Text"
 			}
 		},
 		"items": []
