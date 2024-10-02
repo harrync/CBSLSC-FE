@@ -25,6 +25,15 @@
             "label": "Form id",
             "placeholder": ""
           }
+        },
+        "centered_text": {
+          "type": "Boolean",
+          "config": {
+            "label": "Centered text",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
         }
       },
       "items": {}

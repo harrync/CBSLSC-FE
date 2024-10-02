@@ -9,11 +9,15 @@ import { Widget } from '@typeform/embed-react';
 interface Props {
   title?: string | KeyTextField;
   form_id: string | KeyTextField;
+  centered_text?: boolean;
 }
 
-export const CbForm = ({ title, form_id, ...props }: Props) => {
+export const CbForm = ({ title, form_id, centered_text, ...props }: Props) => {
   const titleMarkup = title && (
-    <CbLayout container classes="col-sm-10 col-md-6">
+    <CbLayout
+      container
+      classes={`col-sm-10 col-md-6 ${centered_text ? 'text-center' : ''}`}
+    >
       <h2>{title}</h2>
     </CbLayout>
   );

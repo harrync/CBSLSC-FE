@@ -384,6 +384,17 @@ export interface FormSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   form_id: prismic.KeyTextField;
+
+  /**
+   * Centered text field in *Form → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: form.primary.centered_text
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  centered_text: prismic.BooleanField;
 }
 
 /**
