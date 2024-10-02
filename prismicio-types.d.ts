@@ -239,6 +239,17 @@ export interface ButtonSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   label: prismic.KeyTextField;
+
+  /**
+   * type field in *Button → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Primary
+   * - **API ID Path**: button.primary.type
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  type: prismic.SelectField<'Primary' | 'Secondary', 'filled'>;
 }
 
 /**
@@ -698,6 +709,17 @@ export interface RichTextSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
+
+  /**
+   * Centered text field in *RichText → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: rich_text.primary.centered_text
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  centered_text: prismic.BooleanField;
 }
 
 /**

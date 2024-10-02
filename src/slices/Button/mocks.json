@@ -14,6 +14,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "along",
 				"type": "Text"
+			},
+			"type": {
+				"__TYPE__": "FieldContent",
+				"value": "Primary",
+				"type": "Select"
 			}
 		},
 		"items": []

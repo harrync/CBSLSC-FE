@@ -33,11 +33,13 @@ strong {
 }
 
 a {
+  --bg: var(--yellow);
+  --hover: var(--red);
   transition: var(--transition);
   text-decoration: none;
   padding-bottom: 2px;
-  background: linear-gradient(to right, var(--yellow), var(--yellow)),
-    linear-gradient(to right, var(--red), var(--red));
+  background: linear-gradient(to right, var(--bg), var(--bg)),
+    linear-gradient(to right, var(--hover), var(--hover));
   background-size:
     100% 2px,
     0 2px;
@@ -73,4 +75,8 @@ p {
   &:last-of-type {
     margin-bottom: 0;
   }
+}
+
+.text-center {
+  text-align: center;
 }

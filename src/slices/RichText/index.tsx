@@ -27,8 +27,13 @@ type RichTextProps = SliceComponentProps<Content.RichTextSlice>;
  * Component for "RichText" Slices.
  */
 const RichText = ({ slice }: RichTextProps): JSX.Element => {
+  console.log(slice);
+
   return (
-    <CbLayout container classes="col-sm-10 col-md-6">
+    <CbLayout
+      container
+      classes={`col-sm-10 col-md-6 ${slice.primary.centered_text ? 'text-center' : ''}`}
+    >
       <PrismicRichText field={slice.primary.content} components={components} />
     </CbLayout>
   );

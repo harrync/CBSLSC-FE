@@ -14,7 +14,11 @@ export type ButtonProps = SliceComponentProps<Content.ButtonSlice>;
 const Button = ({ slice }: ButtonProps): JSX.Element => {
   return (
     <CbLayout container classes="col-sm-4">
-      <CbButton primary label={slice.primary.label} link={slice.primary.link} />
+      <CbButton
+        type={slice.primary.type.toLowerCase()}
+        label={slice.primary.label}
+        link={slice.primary.link}
+      />
     </CbLayout>
   );
 };

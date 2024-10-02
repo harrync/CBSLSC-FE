@@ -26,6 +26,18 @@
             "label": "Label",
             "placeholder": ""
           }
+        },
+        "type": {
+          "type": "Select",
+          "config": {
+            "label": "type",
+            "placeholder": "",
+            "options": [
+              "Primary",
+              "Secondary"
+            ],
+            "default_value": "Primary"
+          }
         }
       },
       "items": {}

@@ -6,7 +6,7 @@ import { KeyTextField, LinkField } from '@prismicio/client';
 import { PrismicNextLink } from '@prismicio/next';
 
 interface ButtonProps {
-  primary?: boolean;
+  type: string;
   label: string | KeyTextField;
   link: LinkField;
 }
@@ -14,17 +14,11 @@ interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export const CbButton = ({
-  primary = false,
-  label,
-  link,
-  ...props
-}: ButtonProps) => {
-  const mode = primary ? 'a-button--primary' : 'a-button--secondary';
+export const CbButton = ({ type, label, link, ...props }: ButtonProps) => {
   return (
     <PrismicNextLink
       field={link}
-      className={['a-button', mode].join(' ')}
+      className={['a-button', `a-button--${type}`].join(' ')}
       {...props}
     >
       {label}

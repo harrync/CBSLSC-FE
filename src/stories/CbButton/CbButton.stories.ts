@@ -8,7 +8,7 @@ const meta = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  args: { label: 'Button', link: undefined },
+  args: { label: 'Button', link: undefined, type: 'primary' },
 } satisfies Meta<typeof CbButton>;
 
 export default meta;
@@ -16,13 +16,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    primary: true,
+    type: 'primary',
     label: 'Button',
   },
 };
 
 export const Secondary: Story = {
   args: {
+    type: 'secondary',
     label: 'Button',
   },
 };

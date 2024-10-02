@@ -18,7 +18,18 @@
             "placeholder": "Lorem ipsum...",
             "allowTargetBlank": true,
             "multi": "paragraph,heading2,heading3,strong,em,hyperlink,list-item",
-            "labels": ["codespan"]
+            "labels": [
+              "codespan"
+            ]
+          }
+        },
+        "centered_text": {
+          "type": "Boolean",
+          "config": {
+            "label": "Centered text",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
           }
         }
       },
