@@ -11,8 +11,6 @@ export type ImageTextProps = SliceComponentProps<Content.ImageTextSlice>;
  * Component for "ImageText" Slices.
  */
 const ImageText = ({ slice }: ImageTextProps): JSX.Element => {
-  console.log(slice);
-
   return <CbImageText slice={slice} alignRight={slice.primary.align_right} />;
 };
 
