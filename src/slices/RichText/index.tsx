@@ -27,8 +27,6 @@ type RichTextProps = SliceComponentProps<Content.RichTextSlice>;
  * Component for "RichText" Slices.
  */
 const RichText = ({ slice }: RichTextProps): JSX.Element => {
-  console.log(slice);
-
   return (
     <CbLayout
       container
