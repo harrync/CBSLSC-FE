@@ -14,6 +14,7 @@ interface Faq {
 
 interface Props {
   faqs: Faq[];
+  title?: KeyTextField;
 }
 
 const components: JSXMapSerializer = {
@@ -59,7 +60,7 @@ export const AccordionItem = ({ question, answer }: Faq) => {
   );
 };
 
-export const CbAccordion = ({ faqs, ...props }: Props) => {
+export const CbAccordion = ({ faqs, title, ...props }: Props) => {
   const faqsList = faqs.map((faq: any, index: number) => {
     return (
       <AccordionItem key={index} question={faq.question} answer={faq.answer} />
@@ -68,6 +69,7 @@ export const CbAccordion = ({ faqs, ...props }: Props) => {
 
   return (
     <CbLayout container classes="col-sm-9">
+      {title ? <h2 className="text-center">{title}</h2> : null}
       <section className="a-accordion">{faqsList}</section>
     </CbLayout>
   );

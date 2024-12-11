@@ -15,6 +15,7 @@ interface Faq {
 
 interface Props {
   faqs: Faq[];
+  title?: KeyTextField;
 }
 
 const components: JSXMapSerializer = {
@@ -35,7 +36,7 @@ const questionSlug = (question: string) => {
     .replace(/[^a-z0-9-]/g, '');
 };
 
-export const CbFaqs = ({ faqs, ...props }: Props) => {
+export const CbFaqs = ({ faqs, title, ...props }: Props) => {
   const faqsLinks = faqs.map((faq: any, index: number) => {
     return (
       <Link
@@ -55,7 +56,7 @@ export const CbFaqs = ({ faqs, ...props }: Props) => {
         className="a-faqs__item"
         id={`${questionSlug(faq.question)}`}
       >
-        <h2 className="a-faqs__question">{faq.question}</h2>
+        <h3 className="a-faqs__question">{faq.question}</h3>
         <div className="a-faqs__answer">
           <PrismicRichText field={faq.answer} components={components} />
         </div>
@@ -69,6 +70,7 @@ export const CbFaqs = ({ faqs, ...props }: Props) => {
   return (
     <section className="a-faqs">
       <CbLayout container classes="col-sm-9">
+        {title ? <h2>{title}</h2> : null}
         <div id="top" className="a-faqs__links">
           {faqsLinks}
         </div>

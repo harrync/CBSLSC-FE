@@ -20,10 +20,10 @@ const Faqs = ({ slice }: FaqsProps): JSX.Element => {
   });
 
   if (slice.variation === 'accordion') {
-    return <CbAccordion faqs={faqs} />;
+    return <CbAccordion faqs={faqs} title={slice.primary.title} />;
   }
 
-  return <CbFaqs faqs={faqs} />;
+  return <CbFaqs faqs={faqs} title={slice.primary.title} />;
 };
 
 export default Faqs;
