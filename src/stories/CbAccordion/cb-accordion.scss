@@ -40,7 +40,7 @@
 
     &-open,
     &:hover {
-      &::before {
+      &::after {
         opacity: 1;
       }
     }
