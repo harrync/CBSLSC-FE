@@ -2,7 +2,13 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "modern",
+				"type": "Text"
+			}
+		},
 		"items": [
 			{
 				"__TYPE__": "GroupItemContent",
@@ -27,6 +33,46 @@
 							"__TYPE__": "FieldContent",
 							"value": "manner",
 							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "accordion",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "tune",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"question",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "village",
+							"type": "Text"
+						}
+					],
+					[
+						"answer",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Nisi incididunt deserunt in aute. Enim occaecat quis cillum consectetur et sit magna labore aliquip quis eiusmod eu fugiat sint. Voluptate enim tempor irure eiusmod laborum ea velit excepteur."
+									}
+								}
+							]
 						}
 					]
 				]

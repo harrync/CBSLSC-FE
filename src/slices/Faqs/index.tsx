@@ -1,3 +1,4 @@
+import { CbAccordion } from '@/stories/CbAccordion';
 import { CbFaqs } from '@/stories/CbFaqs';
 import { Content } from '@prismicio/client';
 import { SliceComponentProps } from '@prismicio/react';
@@ -17,6 +18,10 @@ const Faqs = ({ slice }: FaqsProps): JSX.Element => {
       answer: faq.answer,
     };
   });
+
+  if (slice.variation === 'accordion') {
+    return <CbAccordion faqs={faqs} />;
+  }
 
   return <CbFaqs faqs={faqs} />;
 };

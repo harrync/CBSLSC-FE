@@ -310,6 +310,21 @@ export type DividerSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Faqs → Primary*
+ */
+export interface FaqsSliceDefaultPrimary {
+  /**
+   * Title field in *Faqs → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faqs.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+}
+
+/**
  * Primary content in *Faqs → Items*
  */
 export interface FaqsSliceDefaultItem {
@@ -343,14 +358,67 @@ export interface FaqsSliceDefaultItem {
  */
 export type FaqsSliceDefault = prismic.SharedSliceVariation<
   'default',
-  Record<string, never>,
+  Simplify<FaqsSliceDefaultPrimary>,
   Simplify<FaqsSliceDefaultItem>
+>;
+
+/**
+ * Primary content in *Faqs → Primary*
+ */
+export interface FaqsSliceAccordionPrimary {
+  /**
+   * Title field in *Faqs → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faqs.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Faqs → Items*
+ */
+export interface FaqsSliceAccordionItem {
+  /**
+   * Question field in *Faqs → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faqs.items[].question
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  question: prismic.KeyTextField;
+
+  /**
+   * Answer field in *Faqs → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faqs.items[].answer
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  answer: prismic.RichTextField;
+}
+
+/**
+ * Accordion variation for Faqs Slice
+ *
+ * - **API ID**: `accordion`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqsSliceAccordion = prismic.SharedSliceVariation<
+  'accordion',
+  Simplify<FaqsSliceAccordionPrimary>,
+  Simplify<FaqsSliceAccordionItem>
 >;
 
 /**
  * Slice variation for *Faqs*
  */
-type FaqsSliceVariation = FaqsSliceDefault;
+type FaqsSliceVariation = FaqsSliceDefault | FaqsSliceAccordion;
 
 /**
  * Faqs Shared Slice
@@ -818,9 +886,13 @@ declare module '@prismicio/client' {
       DividerSliceVariation,
       DividerSliceDefault,
       FaqsSlice,
+      FaqsSliceDefaultPrimary,
       FaqsSliceDefaultItem,
+      FaqsSliceAccordionPrimary,
+      FaqsSliceAccordionItem,
       FaqsSliceVariation,
       FaqsSliceDefault,
+      FaqsSliceAccordion,
       FormSlice,
       FormSliceDefaultPrimary,
       FormSliceVariation,
