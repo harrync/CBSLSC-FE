@@ -69,7 +69,7 @@ export const CbFaqs = ({ faqs, title, ...props }: Props) => {
 
   return (
     <section className="a-faqs">
-      <CbLayout container classes="col-sm-9">
+      <CbLayout container classes="col-sm-8">
         {title ? <h2>{title}</h2> : null}
         <div id="top" className="a-faqs__links">
           {faqsLinks}

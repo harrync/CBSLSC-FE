@@ -68,7 +68,7 @@ export const CbAccordion = ({ faqs, title, ...props }: Props) => {
   });
 
   return (
-    <CbLayout container classes="col-sm-9">
+    <CbLayout container classes="col-sm-8">
       {title ? <h2 className="text-center">{title}</h2> : null}
       <section className="a-accordion">{faqsList}</section>
     </CbLayout>
