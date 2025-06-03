@@ -121,6 +121,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | CalendarSlice
   | ImageTextSlice
   | ButtonSlice
   | DividerSlice
@@ -278,6 +279,36 @@ type ButtonSliceVariation = ButtonSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type ButtonSlice = prismic.SharedSlice<'button', ButtonSliceVariation>;
+
+/**
+ * Default variation for Calendar Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CalendarSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *Calendar*
+ */
+type CalendarSliceVariation = CalendarSliceDefault;
+
+/**
+ * Calendar Shared Slice
+ *
+ * - **API ID**: `calendar`
+ * - **Description**: Calendar
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CalendarSlice = prismic.SharedSlice<
+  'calendar',
+  CalendarSliceVariation
+>;
 
 /**
  * Default variation for Divider Slice
@@ -882,6 +913,9 @@ declare module '@prismicio/client' {
       ButtonSliceDefaultPrimary,
       ButtonSliceVariation,
       ButtonSliceDefault,
+      CalendarSlice,
+      CalendarSliceVariation,
+      CalendarSliceDefault,
       DividerSlice,
       DividerSliceVariation,
       DividerSliceDefault,
